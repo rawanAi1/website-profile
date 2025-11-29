@@ -2,732 +2,96 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rawan Reda | Data Analyst & Information Designer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio of Rawan Reda - Data Analyst, Information Designer, and UX Researcher.">
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Outfit', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#2563EB',   // Blue 600
-                        secondary: '#7C3AED', // Violet 600
-                        accent: '#059669',    // Emerald 600
-                        gold: '#CA8A04',      // Gold/Yellow
-                        silver: '#64748B',    // Slate
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body { -webkit-font-smoothing: antialiased; }
-
-        /* Header Transition */
-        #main-header { transition: transform 0.3s ease-in-out; }
-        .header-hidden { transform: translateY(-100%); }
-
-        /* Scroll Animations */
-        .reveal {
-            position: relative;
-            transform: translateY(30px);
-            opacity: 0;
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active { transform: translateY(0); opacity: 1; }
-
-        /* Gradients */
-        .gradient-text {
-            background: linear-gradient(to right, #2563EB, #9333EA);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Timeline */
-        .timeline-item {
-            position: relative;
-            padding-bottom: 3rem;
-            padding-left: 2.5rem;
-            border-left: 2px solid #e5e7eb;
-        }
-        .timeline-item:last-child { border-left: 2px solid transparent; }
-        .timeline-dot {
-            position: absolute;
-            left: -0.65rem;
-            top: 0.25rem;
-            height: 1.25rem;
-            width: 1.25rem;
-            border-radius: 9999px;
-            background-color: #2563EB;
-            border: 3px solid #ffffff;
-            box-shadow: 0 0 0 2px #bfdbfe;
-        }
-
-        /* Hover Cards */
-        .hover-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .hover-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Slider / Gallery Styles */
-        .slider-container {
-            scroll-snap-type: x mandatory;
-            scrollbar-width: none; /* Firefox */
-        }
-        .slider-container::-webkit-scrollbar { display: none; } /* Chrome/Safari */
-        .slide { scroll-snap-align: center; }
-
-        /* Modal Transitions */
-        .modal { transition: opacity 0.3s ease; }
-    </style>
 </head>
 <body class="bg-gray-50 text-slate-800">
 
-    <!-- Header -->
-    <header id="main-header" class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold font-heading tracking-tight gradient-text">Rawan Reda</a>
+<header class="bg-white shadow sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold text-blue-600">Rawan Reda</a>
+        <div class="hidden md:flex gap-6 items-center">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
 
-            <div class="hidden md:flex items-center space-x-8 font-medium text-sm">
-                <a href="#about" class="text-gray-600 hover:text-primary transition">About</a>
-                <a href="#experience" class="text-gray-600 hover:text-primary transition">Experience</a>
-                <a href="#projects" class="text-gray-600 hover:text-primary transition">Projects</a>
-                <a href="#research" class="text-gray-600 hover:text-primary transition">Research</a>
-                <a href="#awards" class="text-gray-600 hover:text-primary transition">Awards</a>
-                
-                <div class="flex items-center gap-3 border-l pl-6 border-gray-200">
-                    <a href="https://www.linkedin.com/in/rawan-m-4bb422289/" target="_blank" title="LinkedIn" class="text-gray-500 hover:text-blue-700 transition">
-                        <i data-lucide="linkedin" class="w-5 h-5"></i>
-                    </a>
-                    <a href="https://github.com/rawan-reda" target="_blank" title="GitHub" class="text-gray-500 hover:text-gray-900 transition">
-                        <i data-lucide="github" class="w-5 h-5"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <button id="mobile-menu-button" class="md:hidden text-gray-800 hover:text-primary focus:outline-none">
-                <i data-lucide="menu" class="w-7 h-7"></i>
-            </button>
-        </nav>
+            <a href="https://github.com/rawanAi1" target="_blank">
+                <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
-                <a href="#about" class="block py-3 border-b border-gray-50">About</a>
-                <a href="#experience" class="block py-3 border-b border-gray-50">Experience</a>
-                <a href="#projects" class="block py-3 border-b border-gray-50">Projects</a>
-                <a href="#research" class="block py-3 border-b border-gray-50">Research</a>
-                <a href="#awards" class="block py-3 border-b border-gray-50">Awards</a>
-                <a href="https://www.linkedin.com/in/rawan-m-4bb422289/" class="block py-3 text-blue-600 font-bold">LinkedIn Profile</a>
-            </div>
+            <a href="https://www.linkedin.com/in/rawan-m-4bb422289/" target="_blank">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </a>
         </div>
-    </header>
+    </nav>
+</header>
 
-    <main>
+<section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+    <h1 class="text-5xl font-bold mb-4">Hi, I’m <span class="text-blue-600">Rawan Reda</span></h1>
+    <p class="text-xl mb-8">Data Analyst & Information Designer</p>
 
-        <!-- Hero Section -->
-        <section id="hero" class="relative overflow-hidden bg-white">
-            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
-            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-purple-50 rounded-full blur-3xl opacity-50"></div>
+    <div class="flex gap-4 flex-wrap justify-center">
+        <a href="https://www.linkedin.com/in/rawan-m-4bb422289/" target="_blank"
+           class="bg-blue-600 text-white px-6 py-3 rounded-lg">LinkedIn</a>
 
-            <div class="container mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center relative z-10">
-                <div class="reveal w-full max-w-4xl">
-                    <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-sm font-semibold tracking-wide uppercase">
-                        Available for Opportunities
-                    </div>
-                    <h1 class="text-5xl md:text-7xl font-extrabold font-heading text-slate-900 leading-tight mb-6">
-                        Hi, I'm <span class="gradient-text">Rawan Reda</span>
-                    </h1>
-                    <h2 class="text-2xl md:text-3xl font-bold text-slate-700 font-heading">
-                        Data Analyst & Information Designer
-                    </h2>
-                    <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-600 leading-relaxed">
-                        Bridging the gap between complex data and human understanding through interactive dashboards, UX research, and AI-driven solutions.
-                    </p>
-                    
-                    <!-- Buttons: LinkedIn, ResearchGate, GitHub -->
-                    <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4 flex-wrap">
-                        
-                        <!-- LinkedIn -->
-                        <a href="https://www.linkedin.com/in/rawan-m-4bb422289/" target="_blank" class="flex items-center justify-center gap-2 px-6 py-3.5 bg-[#0077b5] text-white font-bold rounded-lg shadow-lg hover:opacity-90 transition duration-300 transform hover:-translate-y-1 min-w-[160px]">
-                            <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
-                        </a>
+        <a href="https://github.com/rawanAi1" target="_blank"
+           class="bg-gray-900 text-white px-6 py-3 rounded-lg">GitHub</a>
+    </div>
+</section>
 
-                        <!-- ResearchGate -->
-                        <a href="https://www.researchgate.net/profile/Rawan-Raza?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoiX2RpcmVjdCJ9fQ" target="_blank" class="flex items-center justify-center gap-2 px-6 py-3.5 bg-[#00ccbb] text-white font-bold rounded-lg shadow-lg hover:bg-[#00b3a3] transition duration-300 transform hover:-translate-y-1 min-w-[160px]">
-                            <svg role="img" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.564.377-.97.91-1.215 1.6-1.42 4.027-3.23 8.01-5.385 11.975-2.25 4.14-4.834 8.077-7.726 11.86h5.08c2.404-3.132 4.542-6.398 6.42-9.787.56-1.02.813-1.655 1.054-2.583.15-.575.253-1.127.31-1.655.056-.528.056-1.05.006-1.564-.05-.515-.17-.98-.358-1.393-.186-.412-.442-.76-.763-1.04-.32-.28-.705-.487-1.15-.623-.448-.135-.95-.203-1.506-.203h-.033zm-4.764 1.58c.45.003.88.083 1.29.24.41.156.776.386 1.1.69.32.302.58.67.777 1.106.196.435.318.924.364 1.464.047.54.013 1.105-.1 1.694-.113.59-.317 1.192-.613 1.808-.415.86-1.04 1.847-1.782 2.87-1.92 2.652-3.872 5.25-5.833 7.78H5.98C8.5 15.65 10.743 11.832 12.67 7.78c.84-1.765 1.5-3.344 1.956-4.66.228-.656.33-1.163.303-1.516-.026-.353-.195-.56-.507-.624zm-6.07 1.576l-.68 1.92h-1.6l1.325-3.41H6.18L3.138 11.52h1.76l.54-1.52h2.64l.55 1.52h1.76l-3.05-8.364zm-.17 1.25l.89 2.47H6.9l.89-2.47z"/></svg>
-                            ResearchGate
-                        </a>
+<section id="about" class="py-20 bg-white text-center">
+    <h2 class="text-3xl font-bold mb-4">About Me</h2>
+    <p class="max-w-2xl mx-auto text-gray-600">
+        Information Technology graduate skilled in Data Analysis, AI, and UX Design.
+    </p>
+</section>
 
-                        <!-- GitHub -->
-                        <a href="https://github.com/rawanAi1" target="_blank" class="flex items-center justify-center gap-2 px-6 py-3.5 bg-[#24292e] text-white font-bold rounded-lg shadow-lg hover:bg-[#3b434b] transition duration-300 transform hover:-translate-y-1 min-w-[160px]">
-                            <i data-lucide="github" class="w-5 h-5"></i> GitHub
-                        </a>
+<section id="projects" class="py-20 bg-gray-100 text-center">
+    <h2 class="text-3xl font-bold mb-10">Projects</h2>
 
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-                <section id="about" class="py-20 bg-slate-50">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-4 reveal">
-                        <div class="bg-white p-2 rounded-2xl shadow-xl transform rotate-2 hover:rotate-0 transition duration-500">
-                             <div class="aspect-[4/5] w-full bg-gray-100 rounded-xl overflow-hidden relative group">
-                                <img src="images/Rawan.jpg" alt="Rawan Reda" class="w-full h-full object-cover">
-                                
-                                <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900/80 to-transparent text-white">
-                                    <h3 class="text-xl font-bold">Rawan Reda</h3>
-                                    <p class="text-sm opacity-90">Madinah, Saudi Arabia</p>
-                                </div>
-                             </div>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-8 reveal">
-                        <h2 class="text-sm font-bold text-primary uppercase tracking-widest mb-2">About Me</h2>
-                        <h3 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-6">Data-Driven Innovator</h3>
-                        
-                        <div class="space-y-4 text-lg text-slate-600 leading-relaxed">
-                            <p>
-                                I am an Information Technology graduate (BSc) from Saudi Electronic University (2025). My passion lies in extracting actionable insights from data and crafting intuitive user experiences.
-                            </p>
-                            <p>
-                                With experience ranging from <strong>Data Analytics</strong> at The General Authority for the Care of the Two Holy Mosques to pioneering research in <strong>Quantum Cryptography</strong>, I combine technical rigor with creative problem-solving.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 reveal">
-                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900">Professional Experience</h2>
-                    <div class="w-20 h-1.5 bg-primary mx-auto mt-4 rounded-full"></div>
-                </div>
-
-                <div class="max-w-4xl mx-auto">
-                    <div class="timeline-item reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-                            <h3 class="text-xl font-bold text-slate-900">Data Analyst & Information Designer Intern</h3>
-                            <span class="text-sm font-medium px-3 py-1 bg-blue-50 text-blue-700 rounded-full w-fit mt-1 md:mt-0">Jan 2025 - Aug 2025</span>
-                        </div>
-                        <h4 class="text-md font-semibold text-primary mb-3">The General Authority for the Care of the Two Holy Mosques (Madinah)</h4>
-                        <ul class="list-disc list-outside ml-4 text-slate-600 space-y-2">
-                            <li>Designed and deployed interactive Power BI dashboards using advanced DAX.</li>
-                            <li>Collaborated with cross-functional teams for data requirement gathering.</li>
-                            <li>Created aesthetically compliant visual assets adhering to visual identity guidelines.</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-                            <h3 class="text-xl font-bold text-slate-900">User Experience Freelancer</h3>
-                            <span class="text-sm font-medium px-3 py-1 bg-purple-50 text-purple-700 rounded-full w-fit mt-1 md:mt-0">Jun 2023 - Aug 2023</span>
-                        </div>
-                        <h4 class="text-md font-semibold text-purple-600 mb-3">User Testing (Remote)</h4>
-                        <ul class="list-disc list-outside ml-4 text-slate-600 space-y-2">
-                            <li>Conducted usability testing and heuristic evaluations.</li>
-                            <li>Mapped user flows to streamline navigation paths.</li>
-                            <li>Executed rigorous manual and Black Box testing.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="timeline-item reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-                            <h3 class="text-xl font-bold text-slate-900">Technical Instructor</h3>
-                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 text-gray-700 rounded-full w-fit mt-1 md:mt-0">Aug 2022 - Nov 2022</span>
-                        </div>
-                        <h4 class="text-md font-semibold text-slate-600 mb-3">Shaquf Educational Platform (Remote)</h4>
-                        <ul class="list-disc list-outside ml-4 text-slate-600 space-y-2">
-                            <li>Delivered the complete "Introduction to IT and IS" course covering 12 foundational chapters.</li>
-                            <li>Produced and edited high-quality educational videos (approx. 1 hour per lecture).</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 bg-slate-50">
-            <div class="container mx-auto px-6">
-                 <div class="text-center mb-16 reveal">
-                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900">Featured Projects</h2>
-                    <p class="text-slate-600 mt-4 max-w-2xl mx-auto">Click on any project to see details and explore the work.</p>
-                 </div>
-
-                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project 1: MedAI -->
-                    <div data-modal-target="modal-medai" class="reveal hover-card bg-white rounded-xl shadow-md overflow-hidden cursor-pointer group h-full flex flex-col">
-                        <div class="h-48 bg-blue-100 flex items-center justify-center relative overflow-hidden">
-                            <i data-lucide="activity" class="w-16 h-16 text-blue-500 opacity-80 group-hover:scale-110 transition duration-500"></i>
-                            <div class="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-10 transition duration-300"></div>
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex justify-between items-start mb-2">
-                                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">AI & Healthcare</span>
-                            </div>
-                            <h3 class="font-heading font-bold text-xl mb-2 text-slate-900 group-hover:text-blue-600 transition">MedAl</h3>
-                            <p class="text-slate-600 text-sm line-clamp-3 mb-4 flex-grow">A deep learning-based diagnostic web application using Python, TensorFlow, and Flask to classify skin diseases.</p>
-                            <button class="text-primary text-sm font-bold flex items-center gap-1 mt-auto">View Details <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
-                        </div>
-                    </div>
-
-                    <!-- Project 2: Camel Health -->
-                    <div data-modal-target="modal-camel" class="reveal hover-card bg-white rounded-xl shadow-md overflow-hidden cursor-pointer group h-full flex flex-col">
-                        <div class="h-48 bg-emerald-100 flex items-center justify-center relative overflow-hidden">
-                            <i data-lucide="heart-pulse" class="w-16 h-16 text-emerald-500 opacity-80 group-hover:scale-110 transition duration-500"></i>
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex justify-between items-start mb-2">
-                                <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">Digital Platform</span>
-                            </div>
-                            <h3 class="font-heading font-bold text-xl mb-2 text-slate-900 group-hover:text-emerald-600 transition">Camel Health Management</h3>
-                            <p class="text-slate-600 text-sm line-clamp-3 mb-4 flex-grow">Comprehensive digital platform connecting camel owners and veterinarians for real-time health monitoring.</p>
-                            <button class="text-emerald-600 text-sm font-bold flex items-center gap-1 mt-auto">View Details <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
-                        </div>
-                    </div>
-
-                    <!-- Project 3: Stella -->
-                    <div data-modal-target="modal-stella" class="reveal hover-card bg-white rounded-xl shadow-md overflow-hidden cursor-pointer group h-full flex flex-col">
-                        <div class="h-48 bg-indigo-100 flex items-center justify-center relative overflow-hidden">
-                            <i data-lucide="orbit" class="w-16 h-16 text-indigo-500 opacity-80 group-hover:scale-110 transition duration-500"></i>
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex justify-between items-start mb-2">
-                                <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">Data Viz</span>
-                            </div>
-                            <h3 class="font-heading font-bold text-xl mb-2 text-slate-900 group-hover:text-indigo-600 transition">Stella: Solar System</h3>
-                            <p class="text-slate-600 text-sm line-clamp-3 mb-4 flex-grow">Interactive dashboard for sophisticated visualization of astronomical data and planetary metrics.</p>
-                            <button class="text-indigo-600 text-sm font-bold flex items-center gap-1 mt-auto">View Details <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
-                        </div>
-                    </div>
-                 </div>
-            </div>
-        </section>
-
-        <!-- Research Section -->
-        <section id="research" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 reveal">
-                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900">Scientific Research</h2>
-                </div>
-
-                <div class="grid lg:grid-cols-2 gap-8">
-                    <!-- Research 1: Quantum -->
-                    <div class="reveal bg-slate-900 text-white p-8 rounded-2xl shadow-xl relative overflow-hidden group hover:scale-[1.02] transition">
-                        <div class="absolute top-0 right-0 -mt-10 -mr-10 w-32 h-32 bg-white opacity-5 rounded-full"></div>
-                        <div class="relative z-10">
-                            <div class="inline-block px-3 py-1 border border-white/30 rounded-full text-xs font-medium mb-4">Symposium of Quantum Computing (Feb 2025)</div>
-                            <h3 class="text-2xl font-bold font-heading mb-2">Quantum Cryptography</h3>
-                            <p class="text-slate-300 text-sm italic mb-4">Securing Communication in the Quantum Era</p>
-                            <ul class="space-y-3 text-sm text-slate-300 mb-6">
-                                <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 mt-0.5 text-green-400 shrink-0"></i> Proposed Hybrid AI-QKD Model.</li>
-                                <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 mt-0.5 text-green-400 shrink-0"></i> 131% increase in Key Generation Rate.</li>
-                            </ul>
-                            <a href="https://www.researchgate.net/publication/398030568_Quantum_Cryptography_Securing_Communication_in_the_Quantum_Era?_tp=eyJjb250ZXh0Ijp7InBhZ2UiOiJwcm9maWxlIiwicHJldmlvdXNQYWdlIjpudWxsLCJwb3NpdGlvbiI6InBhZ2VDb250ZW50In19" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-blue-300 transition">
-                                Read on ResearchGate <i data-lucide="external-link" class="w-4 h-4"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Research 2: Undergraduate Thesis -->
-                    <div class="reveal bg-white border border-gray-200 p-8 rounded-2xl shadow-lg relative overflow-hidden group hover:scale-[1.02] transition">
-                        <div class="relative z-10">
-                            <div class="inline-block px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium mb-4">Undergraduate Thesis</div>
-                            <h3 class="text-2xl font-bold font-heading mb-2 text-slate-900">IoT Monitoring Chronic Diseases System</h3>
-                            <p class="text-slate-500 text-sm italic mb-4">Saudi Electronic University</p>
-                            <p class="text-slate-600 text-sm mb-6 leading-relaxed">
-                                Developed a system architecture integrating Internet of Things (IoT) sensors to monitor vital signs of patients with chronic conditions in real-time. The research focused on data transmission reliability and alert mechanisms for emergency response.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="text-xs bg-gray-100 px-2 py-1 rounded text-gray-600">IoT</span>
-                                <span class="text-xs bg-gray-100 px-2 py-1 rounded text-gray-600">Healthcare</span>
-                                <span class="text-xs bg-gray-100 px-2 py-1 rounded text-gray-600">Sensors</span>
-                            </div>
-                            <a href="https://www.researchgate.net/publication/398038474_IoT_monitoring_chronic_diseases_system" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700 transition">
-                                Read on ResearchGate <i data-lucide="external-link" class="w-4 h-4"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Awards & Certificates Gallery Section -->
-        <section id="awards" class="py-20 bg-slate-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 reveal">
-                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900">Awards & Achievements</h2>
-                    <p class="text-slate-600 mt-2">Explore my certifications and awards. Swipe to see more.</p>
-                </div>
-
-                <!-- Main Gallery / Slider -->
-                <div class="relative max-w-5xl mx-auto reveal group bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-                    
-                    <!-- Navigation Buttons -->
-                    <button id="slide-prev" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 p-3 rounded-full shadow-lg hover:bg-white text-slate-800 transition transform hover:scale-110 hidden md:block">
-                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
-                    </button>
-                    <button id="slide-next" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 p-3 rounded-full shadow-lg hover:bg-white text-slate-800 transition transform hover:scale-110 hidden md:block">
-                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
-                    </button>
-
-                    <!-- Slider Wrapper -->
-                    <div id="slider" class="slider-container flex overflow-x-auto snap-x snap-mandatory">
-                        
-                        <!-- Slide 1: 1st Place Space Bootcamp -->
-                        <div class="slide min-w-full md:min-w-[100%] flex flex-col md:flex-row h-auto md:h-96">
-                            <div class="w-full md:w-1/2 bg-yellow-500 p-8 flex flex-col justify-center text-white relative">
-                                <div class="absolute top-4 left-4 opacity-20"><i data-lucide="trophy" class="w-24 h-24"></i></div>
-                                <div class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold uppercase tracking-wider mb-4 border border-white/20">Top Achievement</div>
-                                <h3 class="text-3xl font-bold mb-2 relative z-10">1st Place Winner</h3>
-                                <h4 class="text-xl opacity-90 mb-4 relative z-10">Space Entrepreneurship Bootcamp</h4>
-                                <p class="text-sm opacity-80 mb-6 relative z-10">Communications, Space & Technology Commission (CST) - Jan 2024.</p>
-                                <button onclick="openCert('https://placehold.co/800x600/ca8a04/FFF?text=Space+Bootcamp+Certificate', '1st Place: Space Entrepreneurship Bootcamp')" class="flex items-center gap-2 w-fit px-6 py-2 bg-white text-yellow-600 font-bold rounded-lg hover:bg-yellow-50 transition relative z-10 shadow-lg">
-                                    <i data-lucide="eye" class="w-4 h-4"></i> View Certificate
-                                </button>
-                            </div>
-                            <div class="w-full md:w-1/2 bg-gray-100 relative group-hover:brightness-95 transition cursor-pointer" onclick="openCert('https://placehold.co/800x600/ca8a04/FFF?text=Space+Bootcamp+Certificate', '1st Place: Space Entrepreneurship Bootcamp')">
-                                <img src="images/Space_bootcamp.jpg" alt="CST Certificate" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                                    <span class="bg-black/50 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">Click to Preview</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 2: 2nd Place NASA -->
-                        <div class="slide min-w-full md:min-w-[100%] flex flex-col md:flex-row h-auto md:h-96">
-                            <div class="w-full md:w-1/2 bg-blue-600 p-8 flex flex-col justify-center text-white relative">
-                                <div class="absolute top-4 left-4 opacity-20"><i data-lucide="award" class="w-24 h-24"></i></div>
-                                <h3 class="text-3xl font-bold mb-2 relative z-10">2nd Place Winner</h3>
-                                <h4 class="text-xl opacity-90 mb-4 relative z-10">NASA International Space Apps Challenge</h4>
-                                <p class="text-sm opacity-80 mb-6 relative z-10">Regional winner and Global Nominee (Medina Region, Oct 2023).</p>
-                                <div class="flex gap-3 flex-wrap">
-                                    <a href="https://www.spaceappschallenge.org/2023/find-a-team/space-gateway/?tab=members" target="_blank" class="inline-block w-fit px-6 py-2 bg-blue-800 text-white border border-blue-400 font-bold rounded-lg hover:bg-blue-700 transition relative z-10">
-                                        Verify Team
-                                    </a>
-                                    <button onclick="openCert('https://www.spaceappschallenge.org/2023/find-a-team/space-gateway/?tab=members', '2nd Place: NASA Space Apps')" class="flex items-center gap-2 w-fit px-6 py-2 bg-white text-blue-600 font-bold rounded-lg hover:bg-blue-50 transition relative z-10 shadow-lg">
-                                        <i data-lucide="eye" class="w-4 h-4"></i> Certificate
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="w-full md:w-1/2 bg-gray-100 relative group-hover:brightness-95 transition cursor-pointer" onclick="openCert('https://placehold.co/800x600/1e3a8a/FFF?text=NASA+Certificate', '2nd Place: NASA Space Apps')">
-                                <img src="images/Nasa.jpg" alt="NASA Certificate" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-
-                         <!-- Slide 3: Top 15 Projects -->
-                        <div class="slide min-w-full md:min-w-[100%] flex flex-col md:flex-row h-auto md:h-96">
-                            <div class="w-full md:w-1/2 bg-purple-600 p-8 flex flex-col justify-center text-white relative">
-                                <div class="absolute top-4 left-4 opacity-20"><i data-lucide="star" class="w-24 h-24"></i></div>
-                                <h3 class="text-3xl font-bold mb-2 relative z-10">Top 15 Projects</h3>
-                                <h4 class="text-xl opacity-90 mb-4 relative z-10">CST Competition</h4>
-                                <p class="text-sm opacity-80 mb-6 relative z-10">Ranked among the top 15 projects in Saudi Arabia for technical excellence (Jan 2023).</p>
-                                <button onclick="openCert('https://placehold.co/800x600/7c3aed/FFF?text=CST+Top+15+Certificate', 'Top 15 Projects: CST Competition')" class="flex items-center gap-2 w-fit px-6 py-2 bg-white text-purple-600 font-bold rounded-lg hover:bg-purple-50 transition relative z-10 shadow-lg">
-                                    <i data-lucide="eye" class="w-4 h-4"></i> View Certificate
-                                </button>
-                            </div>
-                            <div class="w-full md:w-1/2 bg-gray-100 relative group-hover:brightness-95 transition cursor-pointer" onclick="openCert('https://placehold.co/800x600/7c3aed/FFF?text=CST+Top+15+Certificate', 'Top 15 Projects: CST Competition')">
-                                <img src="images/CST_Competition.jpg" alt="Top 15 Certificate" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-
-                        <!-- Slide 4: AI Olympiad -->
-                        <div class="slide min-w-full md:min-w-[100%] flex flex-col md:flex-row h-auto md:h-96">
-                            <div class="w-full md:w-1/2 bg-emerald-600 p-8 flex flex-col justify-center text-white relative">
-                                <div class="absolute top-4 left-4 opacity-20"><i data-lucide="cpu" class="w-24 h-24"></i></div>
-                                <h3 class="text-3xl font-bold mb-2 relative z-10">Selected Representative</h3>
-                                <h4 class="text-xl opacity-90 mb-4 relative z-10">SDAIA Artificial Intelligence Olympiad</h4>
-                                <p class="text-sm opacity-80 mb-6 relative z-10">Selected to represent the university in the National AI Olympiad (Jan 2025).</p>
-                                <button onclick="openCert('https://placehold.co/800x600/059669/FFF?text=SDAIA+Certificate', 'SDAIA AI Olympiad Representative')" class="flex items-center gap-2 w-fit px-6 py-2 bg-white text-emerald-600 font-bold rounded-lg hover:bg-emerald-50 transition relative z-10 shadow-lg">
-                                    <i data-lucide="eye" class="w-4 h-4"></i> View Certificate
-                                </button>
-                            </div>
-                            <div class="w-full md:w-1/2 bg-gray-100 relative group-hover:brightness-95 transition cursor-pointer" onclick="openCert('https://placehold.co/800x600/059669/FFF?text=SDAIA+Certificate', 'SDAIA AI Olympiad Representative')">
-                                <img src="https://placehold.co/600x400/059669/FFF?text=SDAIA+Certificate" alt="AI Olympiad" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                        
-                        <!-- Slide 5: Innovation Hackathon -->
-                        <div class="slide min-w-full md:min-w-[100%] flex flex-col md:flex-row h-auto md:h-96">
-                            <div class="w-full md:w-1/2 bg-slate-700 p-8 flex flex-col justify-center text-white relative">
-                                <div class="absolute top-4 left-4 opacity-20"><i data-lucide="lightbulb" class="w-24 h-24"></i></div>
-                                <h3 class="text-3xl font-bold mb-2 relative z-10">Finalist</h3>
-                                <h4 class="text-xl opacity-90 mb-4 relative z-10">Innovation in Education Hackathon</h4>
-                                <p class="text-sm opacity-80 mb-6 relative z-10">King Khalid University. Selected from 640 applicants (Jun 2024).</p>
-                                <button onclick="openCert('https://placehold.co/800x600/334155/FFF?text=Hackathon+Certificate', 'Finalist: Innovation Hackathon')" class="flex items-center gap-2 w-fit px-6 py-2 bg-white text-slate-700 font-bold rounded-lg hover:bg-slate-50 transition relative z-10 shadow-lg">
-                                    <i data-lucide="eye" class="w-4 h-4"></i> View Certificate
-                                </button>
-                            </div>
-                            <div class="w-full md:w-1/2 bg-gray-100 relative group-hover:brightness-95 transition cursor-pointer" onclick="openCert('https://placehold.co/800x600/334155/FFF?text=Hackathon+Certificate', 'Finalist: Innovation Hackathon')">
-                                <img src="https://placehold.co/600x400/334155/FFF?text=Hackathon+Certificate" alt="Hackathon Certificate" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-
-                    </div>
-                    
-                    <!-- Indicators -->
-                    <div class="flex justify-center gap-2 py-4 bg-white border-t border-gray-100">
-                        <button class="indicator w-3 h-3 rounded-full bg-blue-600 transition" onclick="scrollToSlide(0)"></button>
-                        <button class="indicator w-3 h-3 rounded-full bg-gray-300 transition" onclick="scrollToSlide(1)"></button>
-                        <button class="indicator w-3 h-3 rounded-full bg-gray-300 transition" onclick="scrollToSlide(2)"></button>
-                        <button class="indicator w-3 h-3 rounded-full bg-gray-300 transition" onclick="scrollToSlide(3)"></button>
-                        <button class="indicator w-3 h-3 rounded-full bg-gray-300 transition" onclick="scrollToSlide(4)"></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer id="contact" class="bg-slate-900 text-white pt-20 pb-10">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold font-heading reveal">Get In Touch</h2>
-            <p class="mt-4 max-w-lg mx-auto text-slate-400 reveal">Interested in collaboration? Feel free to reach out.</p>
-
-            <div class="mt-10 flex justify-center items-center flex-wrap gap-6 reveal">
-                <a href="mailto:Rawanreda12345678@gmail.com" class="flex items-center gap-3 text-lg bg-white/10 hover:bg-white/20 px-8 py-4 rounded-full transition-colors duration-300 backdrop-blur-sm border border-white/5">
-                    <i data-lucide="mail" class="w-5 h-5"></i>
-                    <span>Rawanreda12345678@gmail.com</span>
-                </a>
-                <a href="https://www.linkedin.com/in/rawan-m-4bb422289/" target="_blank" class="flex items-center gap-3 text-lg bg-[#0077b5] hover:opacity-90 px-8 py-4 rounded-full transition-colors duration-300 shadow-lg">
-                    <i data-lucide="linkedin" class="w-5 h-5"></i>
-                    <span>Connect on LinkedIn</span>
-                </a>
-            </div>
-            
-            <div class="mt-8 flex justify-center reveal">
-                <div class="flex items-center gap-2 text-slate-400">
-                    <i data-lucide="map-pin" class="w-4 h-4"></i>
-                    <span>Madinah, Saudi Arabia</span>
-                </div>
-            </div>
-            <div class="mt-16 pt-8 border-t border-slate-800 text-slate-500 text-sm">
-                <p>&copy; 2025 Rawan Reda.</p>
-            </div>
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div class="bg-white p-6 rounded-xl shadow">
+            <h3 class="font-bold">MedAI</h3>
+            <p class="text-sm mt-2">AI skin disease detection system.</p>
         </div>
-    </footer>
-
-    <!-- Modals -->
-
-    <!-- Generic Certificate Modal -->
-    <div id="modal-cert" class="modal fixed inset-0 bg-black/90 z-[70] hidden items-center justify-center p-4 backdrop-blur-sm">
-        <div class="bg-transparent max-w-4xl w-full flex flex-col items-center">
-            <div class="w-full flex justify-between items-center mb-4 px-4">
-                <h3 id="cert-title" class="text-xl font-bold text-white">Certificate Preview</h3>
-                <button onclick="closeCert()" class="text-white hover:text-gray-300 bg-white/10 p-2 rounded-full transition">
-                    <i data-lucide="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <img id="cert-img" src="" class="max-h-[80vh] w-auto rounded-lg shadow-2xl border border-white/10">
+        <div class="bg-white p-6 rounded-xl shadow">
+            <h3 class="font-bold">Camel Health</h3>
+            <p class="text-sm mt-2">Smart animal healthcare monitoring.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow">
+            <h3 class="font-bold">Stella</h3>
+            <p class="text-sm mt-2">Solar system analytics dashboard.</p>
         </div>
     </div>
+</section>
 
-    <!-- MedAI Modal -->
-    <div id="modal-medai" class="modal fixed inset-0 bg-slate-900/80 z-[60] hidden items-center justify-center p-4 backdrop-blur-sm">
-        <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto transform transition-transform duration-300 scale-95 flex flex-col">
-            <div class="flex justify-between items-center p-6 border-b sticky top-0 bg-white z-10">
-                <h3 class="text-xl font-bold text-slate-900">MedAl (Skin Disease Detection)</h3>
-                <button data-modal-close="modal-medai" class="text-slate-400 hover:text-red-500 transition"><i data-lucide="x" class="w-6 h-6"></i></button>
-            </div>
-            <div class="p-6">
-                <img src="https://placehold.co/800x400/2563EB/FFFFFF?text=MedAI+Interface" class="w-full rounded-xl shadow-md mb-6">
-                <h4 class="font-bold text-lg mb-2">Overview</h4>
-                <p class="text-slate-600 mb-6">Developed a deep learning-based diagnostic web application using Python, TensorFlow, and Flask. The system classifies skin diseases (e.g., Melanoma) from images with high accuracy.</p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="px-2 py-1 bg-gray-100 rounded text-xs text-gray-700">Python</span>
-                    <span class="px-2 py-1 bg-gray-100 rounded text-xs text-gray-700">TensorFlow</span>
-                    <span class="px-2 py-1 bg-gray-100 rounded text-xs text-gray-700">Flask</span>
-                </div>
-            </div>
-        </div>
+<footer id="contact" class="bg-slate-900 text-white text-center py-16">
+    <h2 class="text-2xl font-bold">Get In Touch</h2>
+    <p class="mt-4">Rawanreda12345678@gmail.com</p>
+
+    <div class="flex justify-center gap-6 mt-6">
+        <a href="https://github.com/rawanAi1" target="_blank">
+            <i data-lucide="github" class="w-6 h-6"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/rawan-m-4bb422289/" target="_blank">
+            <i data-lucide="linkedin" class="w-6 h-6"></i>
+        </a>
     </div>
 
-    <!-- Camel Modal -->
-    <div id="modal-camel" class="modal fixed inset-0 bg-slate-900/80 z-[60] hidden items-center justify-center p-4 backdrop-blur-sm">
-        <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto transform transition-transform duration-300 scale-95 flex flex-col">
-            <div class="flex justify-between items-center p-6 border-b sticky top-0 bg-white z-10">
-                <h3 class="text-xl font-bold text-slate-900">Camel Health Management</h3>
-                <button data-modal-close="modal-camel" class="text-slate-400 hover:text-red-500 transition"><i data-lucide="x" class="w-6 h-6"></i></button>
-            </div>
-            <div class="p-6">
-                <img src="https://placehold.co/800x400/059669/FFFFFF?text=Camel+App+Dashboard" class="w-full rounded-xl shadow-md mb-6">
-                <h4 class="font-bold text-lg mb-2">Overview</h4>
-                <p class="text-slate-600 mb-6">Digital platform connecting camel owners and veterinarians to facilitate real-time health monitoring and early disease detection.</p>
-            </div>
-        </div>
-    </div>
+    <p class="mt-10 text-sm text-gray-400">&copy; 2025 Rawan Reda</p>
+</footer>
 
-    <!-- Stella Modal -->
-    <div id="modal-stella" class="modal fixed inset-0 bg-slate-900/80 z-[60] hidden items-center justify-center p-4 backdrop-blur-sm">
-        <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto transform transition-transform duration-300 scale-95 flex flex-col">
-            <div class="flex justify-between items-center p-6 border-b sticky top-0 bg-white z-10">
-                <h3 class="text-xl font-bold text-slate-900">Stella: Solar System Analytics</h3>
-                <button data-modal-close="modal-stella" class="text-slate-400 hover:text-red-500 transition"><i data-lucide="x" class="w-6 h-6"></i></button>
-            </div>
-            <div class="p-6">
-                <img src="https://placehold.co/800x400/4F46E5/FFFFFF?text=Space+Dashboard" class="w-full rounded-xl shadow-md mb-6">
-                <h4 class="font-bold text-lg mb-2">Overview</h4>
-                <p class="text-slate-600 mb-6">Interactive and dynamic dashboard for visualization of astronomical data, enabling users to analyze metrics of various planets.</p>
-            </div>
-        </div>
-    </div>
+<script>
+    lucide.createIcons();
+</script>
 
-    <script>
-        lucide.createIcons();
-
-        // Scroll Reveal
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        reveal();
-
-        // Slider Logic
-        const slider = document.getElementById('slider');
-        const prevBtn = document.getElementById('slide-prev');
-        const nextBtn = document.getElementById('slide-next');
-        const indicators = document.querySelectorAll('.indicator');
-
-        const updateIndicators = (index) => {
-            indicators.forEach((dot, i) => {
-                if (i === index) {
-                    dot.classList.remove('bg-gray-300');
-                    dot.classList.add('bg-blue-600');
-                } else {
-                    dot.classList.add('bg-gray-300');
-                    dot.classList.remove('bg-blue-600');
-                }
-            });
-        };
-
-        const scrollToSlide = (index) => {
-             if(slider) {
-                const width = slider.offsetWidth;
-                slider.scrollTo({ left: width * index, behavior: 'smooth' });
-             }
-        }
-
-        if(slider && prevBtn && nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                slider.scrollBy({ left: slider.offsetWidth, behavior: 'smooth' });
-            });
-            prevBtn.addEventListener('click', () => {
-                slider.scrollBy({ left: -slider.offsetWidth, behavior: 'smooth' });
-            });
-            
-            slider.addEventListener('scroll', () => {
-                const scrollPos = slider.scrollLeft;
-                const width = slider.offsetWidth;
-                const index = Math.round(scrollPos / width);
-                updateIndicators(index);
-            });
-        }
-        
-        // Mobile Menu
-        const menuBtn = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if(menuBtn) {
-            menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        }
-
-        // Project Modals
-        const openBtns = document.querySelectorAll('[data-modal-target]');
-        const closeBtns = document.querySelectorAll('[data-modal-close]');
-        
-        openBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const modal = document.getElementById(btn.dataset.modalTarget);
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-                setTimeout(() => modal.querySelector('.transform').classList.remove('scale-95'), 10);
-            });
-        });
-
-        closeBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const modal = document.getElementById(btn.dataset.modalClose);
-                modal.querySelector('.transform').classList.add('scale-95');
-                setTimeout(() => {
-                    modal.classList.add('hidden');
-                    modal.classList.remove('flex');
-                }, 300);
-            });
-        });
-        
-        // Certificate Preview Modal
-        function openCert(imageSrc, title) {
-            const modal = document.getElementById('modal-cert');
-            const img = document.getElementById('cert-img');
-            const titleEl = document.getElementById('cert-title');
-            
-            img.src = imageSrc;
-            titleEl.textContent = title;
-            
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        function closeCert() {
-            const modal = document.getElementById('modal-cert');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                // Check if it's the certificate modal (simple hide)
-                if (event.target.id === 'modal-cert') {
-                    closeCert();
-                } else {
-                    // It's a project modal with transition
-                    const content = event.target.querySelector('.transform');
-                    if(content) content.classList.add('scale-95');
-                    setTimeout(() => {
-                        event.target.classList.add('hidden');
-                        event.target.classList.remove('flex');
-                    }, 300);
-                }
-            }
-        }
-    </script>
 </body>
 </html>
+
 
 
